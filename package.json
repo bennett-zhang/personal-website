@@ -1,0 +1,25 @@
+{
+	"name": "personal-website",
+	"version": "0.0.0",
+	"description": "My personal website showcasing my projects, skills, and experience.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bennett-zhang/personal-website"
+	},
+	"keywords": [
+		"resume",
+		"activities",
+		"skills",
+		"experience",
+		"projects",
+		"hobbies"
+	],
+	"author": "Bennett Zhang",
+	"license": "MIT",
+	"dependencies": {}
+}
