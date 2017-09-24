@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<% include ../partials/head %>
+	</head>
+
+	<body>
+		<div class="parallax">
+			<% const numLayers = 5;
+			for (let i = 0; i < numLayers; i++) { %>
+				<div id="parallax-layer-<%= i %>" class="parallax-layer" data-speed="<%= (i + 1) / numLayers %>"></div>
+			<% } %>
+			<div class="parallax-layer d-flex justify-content-center align-items-end" data-speed="1">
+				<a href="#start" class="btn btn-dark mb-4">&#x2b07;</a>
+			</div>
+		</div>
+		<div id="start" class="container-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="d-flex h-100 justify-content-center align-items-center">
+							<img class="rounded-circle" src="img/portrait.jpg" width="260" alt="portrait">
+						</div>
+					</div>
+					<div class="col-12 col-lg-8">
+						<h1>About Bennett D. Zhang</h1>
+						<p>
+							Undergraduate at Carnegie Mellon University studying computer science. Seeking summer internship to consolidate and compile my skills and experience assisting a company's software development needs.
+						</p>
+						<p>
+							Resourceful, effective, and detail-oriented computer scientist possessing strong leadership and communication skills. Innovative programmer who integrates keen organizational prowess with ingenuity to produce polished projects and programs.
+						</p>
+						<p>
+							Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
+						</p>
+						<p>
+							Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
+						</p>
+						<a href="pdf/resume.pdf" class="btn btn-light">R&eacute;sum&eacute;</a>
+						<a href="https://github.com/bennett-zhang/" class="btn btn-dark">Github</a>
+						<a href="https://www.linkedin.com/in/bennett-d-zhang-34323813b" class="btn btn-info">Linkedin</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-md-4">
+						<h1>Skills</h1>
+						<ul class="list-group">
+							<li class="list-group-item">JavaScript</li>
+							<li class="list-group-item">HTML5</li>
+							<li class="list-group-item">CSS3</li>
+							<li class="list-group-item">Node.js</li>
+							<li class="list-group-item">Express</li>
+							<li class="list-group-item">Git</li>
+							<li class="list-group-item">Java</li>
+							<li class="list-group-item">Python</li>
+							<li class="list-group-item">WebGL</li>
+							<li class="list-group-item">LaTeX</li>
+						</ul>
+					</div>
+					<div class="col">
+						<h1>Honors</h1>
+						<ul class="list-group">
+							<li class="list-group-item">National Merit Finalist</li>
+							<li class="list-group-item">AP Scholar With Distinction</li>
+							<li class="list-group-item">Le Grand Concours Two Time Gold Medalist</li>
+							<li class="list-group-item">Grade 6 Piano With Merit</li>
+							<li class="list-group-item">Grade 5 Music Theory With Distinction</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="card">
+							<img src="../img/phone-binary.jpg" alt="iPhone and binary" class="card-img-top">
+							<div class="card-body">
+								<h4 class="card-title">Bit Stories</h4>
+								<p class="card-text">Coordinated team and delegated workload for web app, which encourages creativity and individuality in students through real time story-telling.</p>
+								<p class="card-text">Stories accessible through database powered by MongoDB. Unites Bootstrap, Socket.IO, and Angular APIs for a seamless, user-friendly experience.</p>
+								<a href="https://bit-stories.herokuapp.com" class="btn btn-light">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="card">
+							<img src="../img/julia.jpg" alt="Julia fractal" class="card-img-top">
+							<div class="card-body">
+								<h4 class="card-title">Fractal Explorer</h4>
+								<p class="card-text">Developed website which uses WebGL to construct lightning-fast and scalable renderings of Mandelbrot and Julia fractals on the complex plane.</p>
+								<p class="card-text">Clean, dynamic interface that features intuitive gestures powered by Hammer.js. Optimized for most devices, including mobile and touch screens.</p>
+								<a href="https://fractal-explorer.herokuapp.com" class="btn btn-light">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="card">
+							<img src="../img/ultimate-t3.jpg" alt="ultimate tic tac toe" class="card-img-top">
+							<div class="card-body">
+								<h4 class="card-title">Ultimate T3</h4>
+								<p class="card-text">Website runs a highly strategic variant of classic tic-tac-toe called ultimate tic- tac-toe, played on a 9x9 board. Responsive design showcasing Bootstrap.</p>
+								<p class="card-text">Artificial intelligence uses minimax algorithm with alpha-beta pruning for efficient tree searching. Multiplayer mode utilizes Node.js, Express, and Socket.IO.</p>
+								<a href="https://ultimate-t3.herokuapp.com" class="btn btn-light">View Project</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<% include ../partials/footer %>
+		<% include ../partials/scripts %>
+	</body>
+
+</html>

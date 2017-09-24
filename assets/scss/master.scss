@@ -1,0 +1,77 @@
+$white: #fff;
+$cyan: #0077B5;
+$bg-color: #090223;
+$bg-color-light: lighten($bg-color, 5%);
+$body-color: $white;
+$link-color: lighten($cyan, 10%);
+$list-group-bg: $bg-color-light;
+$card-bg: $bg-color-light;
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700";
+$font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-weight: 600;
+$parallax-image-width: 3500;
+$parallax-image-height: 2000;
+$parallax-height: 100vw / $parallax-image-width * $parallax-image-height;
+@import "bootstrap/bootstrap";
+
+.container-wrapper {
+	position: relative;
+	padding-top: map-get($spacers, 5);
+	background: $bg-color;
+}
+
+.row {
+	padding-bottom: map-get($spacers, 5);
+}
+
+[class^=col] {
+	margin-bottom: map-get($spacers, 4);
+}
+
+.parallax,
+.parallax-layer {
+	height: $parallax-height - 1vw;
+}
+
+.parallax {
+	position: relative;
+}
+
+.parallax-layer {
+	position: fixed;
+	width: 100%;
+	background-size: auto $parallax-height;
+	background-position: center center;
+	transform: translate(0px, 0px);
+
+	&[data-speed="1"] {
+		position: absolute;
+	}
+}
+@for $i from 0 through 4 {
+	#parallax-layer-#{$i} {
+		background-image: url("../img/parallax#{$i}.png");
+	}
+}
+
+footer {
+	width: 100%;
+	background-color: $bg-color-light;
+
+	.list-inline {
+		margin: 0;
+		padding: map-get($spacers, 3) 0;
+		line-height: 1;
+
+		.list-inline-item {
+			margin: map-get($spacers, 2) 0;
+
+			&:not(:last-child) {
+				margin-right: map-get($spacers, 2);
+				border-right: solid 2px transparentize($white, 0.25);
+				padding-right: map-get($spacers, 3);
+			}
+		}
+	}
+}
