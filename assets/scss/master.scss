@@ -9,13 +9,13 @@ $list-group-bg: $bg-color-light;
 $card-bg: $bg-color-light;
 $font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;
-$headings-font-weight: 600;
+$headings-font-family: "Montserrat", $font-family-sans-serif;
 $parallax-image-width: 3500px;
 $parallax-image-height: 2000px;
 $parallax-height: 100vw / $parallax-image-width * $parallax-image-height;
 $start-button-dimensions: 6vw;
 @import "bootstrap/bootstrap";
-@import "aos/aos";
+@import "animate";
 @keyframes bob {
 	0% {
 		bottom: 0;
