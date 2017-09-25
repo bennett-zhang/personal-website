@@ -16,10 +16,10 @@ $(() => {
 	})
 
 	$animate.attr({
-		"data-animate": "fadeInDown",
+		"data-animate": "fadeIn",
 		"data-duration": ".6s"
 	}).scrolla({
-		mobile: true,
+		mobile: false,
 		once: true
 	})
 
