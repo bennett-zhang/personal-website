@@ -2,6 +2,7 @@ $white: #fff;
 $cyan: #0077B5;
 $bg-color: #090223;
 $bg-color-light: lighten($bg-color, 5%);
+$body-bg: $bg-color;
 $body-color: $white;
 $link-color: lighten($cyan, 10%);
 $list-group-bg: $bg-color-light;
