@@ -13,22 +13,9 @@ $headings-font-family: "Montserrat", $font-family-sans-serif;
 $parallax-image-width: 3500px;
 $parallax-image-height: 2000px;
 $parallax-height: 100vw / $parallax-image-width * $parallax-image-height;
-$start-button-dimensions: 6vw;
+$start-button-dimensions: 7vw;
 @import "bootstrap/bootstrap";
 @import "animate";
-@keyframes bob {
-	0% {
-		bottom: 0;
-	}
-
-	50% {
-		bottom: 4vw;
-	}
-
-	100% {
-		bottom: 0;
-	}
-}
 
 .container-wrapper {
 	position: relative;
@@ -46,7 +33,7 @@ $start-button-dimensions: 6vw;
 
 .parallax,
 .parallax-layer {
-	height: $parallax-height - 1vw;
+	height: calc(#{$parallax-height} - 1px);
 }
 
 .parallax {
@@ -72,13 +59,12 @@ $start-button-dimensions: 6vw;
 
 #start-button {
 	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
+	bottom: $start-button-dimensions / 4;
+	left: calc(50% - #{$start-button-dimensions / 2});
 	width: $start-button-dimensions;
 	height: $start-button-dimensions;
 	background: url("../img/down-arrow.png") no-repeat 50% 50%;
 	background-size: $start-button-dimensions auto;
-	animation: bob 2s ease-in-out infinite;
 }
 
 #portrait {
@@ -88,6 +74,10 @@ $start-button-dimensions: 6vw;
 	#portrait {
 		width: 250px;
 	}
+}
+
+.typed-cursor {
+	animation-duration: 2s;
 }
 
 footer {

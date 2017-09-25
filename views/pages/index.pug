@@ -10,7 +10,7 @@ html
 			- for (let i = 0; i < numLayers; i++) {
 					.parallax-layer(id=`parallax-layer-${i}` data-speed=(i + 1) / numLayers)
 			- }
-			a#start-button(href="#start")
+			a#start-button.animated.bounce.infinite(href="#start")
 
 		#start.container-wrapper
 			.container
@@ -20,7 +20,7 @@ html
 							img#portrait.rounded-circle(src="img/portrait.jpg" alt="portrait")
 
 					.col-12.col-lg-8
-						h1 About Bennett D. Zhang
+						h1.display-4.text-capitalize #[span#identity]
 						p Undergraduate at Carnegie Mellon University studying computer science. Seeking summer internship to consolidate and compile my skills and experience assisting a company's software development needs.
 						p Resourceful, effective, and detail-oriented computer scientist possessing strong leadership and communication skills. Innovative programmer who integrates keen organizational prowess with ingenuity to produce polished projects and programs.
 						p Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
@@ -36,14 +36,14 @@ html
 						ul.list-group
 							- const skills = ["JavaScript (ECMAScript 6)", "HTML5", "CSS3", "Node.js", "Express", "Git", "Java", "Python", "WebGL", "LaTeX"]
 							each skill in skills
-									li.list-group-item= skill
+								li.list-group-item= skill
 
 					.col
 						h1 Honors
 						ul.list-group
 							- const honors = ["National Merit Finalist", "AP Scholar With Distinction", "Le Grand Concours Two Time Gold Medalist", "Grade 6 Piano With Merit", "Grade 5 Music Theory With Distinction"]
 							each honor in honors
-									li.list-group-item= honor
+								li.list-group-item= honor
 
 				.row
 					.col-12.col-md-6
