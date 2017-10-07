@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,500,500i|Open+Sans:300,300i,400,400i,700,700i");
 $white: #fff;
 $cyan: #0077B5;
 $bg-color: #090223;
@@ -14,8 +15,8 @@ $parallax-image-width: 3500px;
 $parallax-image-height: 2000px;
 $parallax-height: 100vw / $parallax-image-width * $parallax-image-height;
 $start-button-dimensions: 7vw;
-@import "bootstrap/bootstrap";
-@import "animate";
+@import "bootstrap/scss/bootstrap";
+@import "animate.css/animate.min";
 
 .container-wrapper {
 	position: relative;

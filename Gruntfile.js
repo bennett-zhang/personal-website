@@ -3,6 +3,7 @@ module.exports = grunt => {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
+		banner: "/*! <%= pkg.name %> v<%= pkg.version %> | <%= grunt.template.today('yyyy-mm-dd') %> | (c) <%= pkg.author %> | <%= pkg.repository.url %> */",
 		pug: {
 			dist: {
 				files: {
@@ -20,31 +21,79 @@ module.exports = grunt => {
 				}]
 			}
 		},
+		browserify: {
+			dist: {
+				files: {
+					"public/js/fancify.min.js": "assets/js/fancify.js"
+				}
+			},
+			options: {
+				transform: [
+					["babelify", {
+						presets: "es2015"
+					}]
+				]
+			}
+		},
+		concat: {
+			dist: {
+				files: {
+					"public/js/fancify.min.js": [
+						"bower_components/jquery/dist/jquery.min.js",
+						"bower_components/popper.js/dist/umd/popper.min.js",
+						"bower_components/bootstrap/dist/js/bootstrap.min.js",
+						"bower_components/jquery-scrolla/dist/scrolla.jquery.min.js",
+						"bower_components/typed.js/lib/typed.min.js",
+						"public/js/fancify.min.js"
+					]
+				}
+			}
+		},
+		uglify: {
+			dist: {
+				files: {
+					"public/js/fancify.min.js": "public/js/fancify.min.js"
+				},
+				options: {
+					banner: "<%= banner %>"
+				}
+			}
+		},
 		sass: {
 			dist: {
 				files: {
-					"public/css/master.css": "assets/scss/master.scss"
+					"public/css/master.min.css": "assets/scss/master.scss"
+				},
+				options: {
+					includePaths: ["bower_components"]
 				}
 			}
 		},
 		uncss: {
 			dist: {
 				files: {
-					"public/css/master.css": ["public/*.html"]
+					"public/css/master.min.css": "public/*.html"
 				}
 			}
 		},
 		autoprefixer: {
 			dist: {
 				files: {
-					"public/css/master.css": "public/css/master.css"
+					"public/css/master.min.css": "public/css/master.min.css"
 				}
 			}
 		},
 		cssmin: {
 			dist: {
 				files: {
-					"public/css/master.css": ["public/css/master.css"]
+					"public/css/master.min.css": "public/css/master.min.css"
+				},
+				options: {
+					level: {
+						1: {
+							specialComments: 0
+						}
+					}
 				}
 			}
 		},
@@ -52,11 +101,11 @@ module.exports = grunt => {
 			dist: {
 				options: {
 					position: "top",
-					banner: "/*! <%= pkg.name %> v<%= pkg.version %> | <%= grunt.template.today('yyyy-mm-dd') %> | (c) <%= pkg.author %> | <%= pkg.repository.url %> */",
+					banner: "<%= banner %>",
 					linebreak: true
 				},
 				files: {
-					"public/css/master.css": ["public/css/master.css"]
+					"public/css/master.min.css": ["public/css/master.min.css"]
 				}
 			}
 		},
@@ -68,6 +117,14 @@ module.exports = grunt => {
 			img: {
 				files: "assets/img/**/*.{png,jpg,gif}",
 				tasks: ["imagemin"]
+			},
+			js: {
+				files: "assets/js/**/*.js",
+				tasks: [
+					"browserify",
+					"concat",
+					"uglify"
+				]
 			},
 			scss: {
 				files: "assets/scss/**/*.scss",

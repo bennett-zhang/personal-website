@@ -1,0 +1,34 @@
+{
+  "name": "personal-website",
+  "description": "My personal website showcasing my projects, skills, and experience.",
+  "main": "index.js",
+  "authors": [
+    "Bennett Zhang"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "resume",
+    "activities",
+    "skills",
+    "experience",
+    "projects",
+    "hobbies"
+  ],
+  "homepage": "https://github.com/bennett-zhang/personal-website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5",
+    "bootstrap": "v4.0.0-beta",
+    "typed.js": "^2.0.6",
+    "animate.css": "^3.5.2",
+    "jquery-scrolla": "https://github.com/maximzhurkin/jquery-scrolla.git"
+  }
+}

@@ -1,14 +1,13 @@
 doctype html
 html
 
-	head
-		include ../partials/head.pug
+	include ../partials/head.pug
 
 	body
 		.parallax
 			- const numLayers = 5
 			- for (let i = 0; i < numLayers; i++) {
-					.parallax-layer(id=`parallax-layer-${i}` data-speed=(i + 1) / numLayers)
+				.parallax-layer(id=`parallax-layer-${i}` data-speed=(i + 1) / numLayers)
 			- }
 			a#start-button.animated.bounce.infinite(href="#start")
 
@@ -34,9 +33,9 @@ html
 					.col-12.col-md-6
 						h1 Skills
 						ul.list-group
-							- const skills = ["JavaScript (ECMAScript 6)", "HTML5", "CSS3", "Node.js", "Express", "Git", "Java", "Python", "WebGL", "LaTeX"]
+							- const skills = ["JavaScript (ECMAScript 6)", "HTML5", "CSS3", "Node.js", "Express", "Git", "Java", "Python", "WebGL", "L<sup>A</sup>T<sub>E</sub>X"]
 							each skill in skills
-								li.list-group-item= skill
+								li.list-group-item !{skill}
 
 					.col
 						h1 Honors
@@ -74,4 +73,5 @@ html
 								a(href="https://ultimate-t3.herokuapp.com").btn.btn-light View Project
 
 		include ../partials/footer.pug
-		include ../partials/scripts.pug
+
+		script(src="./js/fancify.min.js")
