@@ -4,14 +4,12 @@ html
 	include ../partials/head.pug
 
 	body
-		.parallax
-			- const numLayers = 5
-			- for (let i = 0; i < numLayers; i++) {
-				.parallax-layer(id=`parallax-layer-${i}` data-speed=(i + 1) / numLayers)
-			- }
-			a#start-button.animated.bounce.infinite(href="#start")
+		section#banner.d-flex.align-items-center
+			.container
+				h1.display-1 Bennett Zhang
+				p.lead School of Computer Science at Carnegie Mellon University
 
-		#start.container-wrapper
+		section#wrapper
 			.container
 				.row
 					.col
@@ -25,9 +23,9 @@ html
 						p Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
 						p Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
 						.btn-group
-							a(href="pdf/resume.pdf").btn.btn-light R&eacute;sum&eacute;
-							a(href="https://github.com/bennett-zhang/").btn.btn-dark Github
-							a(href="https://www.linkedin.com/in/bennett-d-zhang-34323813b").btn.btn-info Linkedin
+							a(href="pdf/resume.pdf" target="_blank").btn.btn-light R&eacute;sum&eacute;
+							a(href="https://github.com/bennett-zhang/" target="_blank").btn.btn-dark Github
+							a(href="https://www.linkedin.com/in/bennett-d-zhang-34323813b" target="_blank").btn.btn-primary Linkedin
 
 				.row
 					.col-12.col-md-6
@@ -45,7 +43,7 @@ html
 								li.list-group-item= honor
 
 				.row
-					.col-12.col-md-6
+					.col-12.col-lg-6
 						.card
 							img(src="img/phone-binary.jpg" alt="iPhone and binary").card-img-top
 							.card-body
@@ -54,7 +52,7 @@ html
 								p.card-text Stories accessible through database powered by MongoDB. Unites Bootstrap, Socket.IO, and Angular APIs for a seamless, user-friendly experience.
 								a(href="https://bit-stories.herokuapp.com").btn.btn-light View Project
 
-					.col-12.col-md-6
+					.col-12.col-lg-6
 						.card
 							img(src="img/julia.jpg" alt="Julia fractal").card-img-top
 							.card-body
@@ -63,7 +61,7 @@ html
 								p.card-text Clean, dynamic interface that features intuitive gestures powered by Hammer.js. Optimized for most devices, including mobile and touch screens.
 								a(href="https://fractal-explorer.herokuapp.com").btn.btn-light View Project
 
-					.col-12.col-md-6
+					.col-12.col-lg-6
 						.card
 							img(src="img/ultimate-t3.jpg" alt="ultimate tic tac toe").card-img-top
 							.card-body
@@ -72,6 +70,6 @@ html
 								p.card-text Artificial intelligence uses minimax algorithm with alpha-beta pruning for efficient tree searching. Multiplayer mode utilizes Node.js, Express, and Socket.IO.
 								a(href="https://ultimate-t3.herokuapp.com").btn.btn-light View Project
 
-		include ../partials/footer.pug
+include ../partials/footer.pug
 
-		script(src="./js/fancify.min.js")
+script(src="./js/fancify.min.js")

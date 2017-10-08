@@ -1,3 +1,5 @@
+"use strict"
+
 module.exports = grunt => {
 	require("load-grunt-tasks")(grunt)
 
@@ -44,6 +46,7 @@ module.exports = grunt => {
 						"bower_components/bootstrap/dist/js/bootstrap.min.js",
 						"bower_components/jquery-scrolla/dist/scrolla.jquery.min.js",
 						"bower_components/typed.js/lib/typed.min.js",
+						"bower_components/trianglify/dist/trianglify.min.js",
 						"public/js/fancify.min.js"
 					]
 				}

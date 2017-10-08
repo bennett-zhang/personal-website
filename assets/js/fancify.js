@@ -1,56 +1,59 @@
-$(() => {
-	const $window = $(window)
-	const $html_body = $("html, body")
-	const $layers = $(".parallax-layer:not([data-speed=1])")
-	const $animate = $("[class^=col]")
+const $window = $(window)
+const $body = $("body")
+const identity = $("#identity")[0]
+const $animate = $("[class^=col]")
+let $svg
 
-	// Parallax effect
-	$window.scroll(evt => {
-		const scrollTop = $window.scrollTop()
+// Scale triangle pattern according to window dimensions
+function resize() {
+	if ($svg)
+		$svg.remove()
 
-		for (let i = 0; i < $layers.length; i++) {
-			const $layer = $layers.eq(i)
-			const speed = $layer.attr("data-speed")
-			const y = -scrollTop * speed
-			$layer.css("transform", `translate(0, ${y}px)`)
-		}
+	// Triangle pattern
+	const pattern = Trianglify({
+		width: $window.width() || 1,
+		height: $window.height() || 1,
+		cell_size: 50,
+		seed: "bennett",
+		x_colors: "RdBu",
+		y_colors: "YlGnBu"
 	})
 
-	// Scroll to hash location
-	$("a").click(evt => {
-		const hash = evt.target.hash
+	$svg = $(pattern.svg()).attr("id", "cover")
+	$body.prepend($svg)
+}
+resize()
+$window.resize(resize)
 
-		if (hash) {
-			evt.preventDefault()
-
-			$html_body.animate({
-				scrollTop: $(hash).offset().top
-			}, 1000)
-		}
-	})
-
-	// Reveal animation on scroll
-	$animate.attr({
-		"data-animate": "fadeIn",
-		"data-duration": ".6s"
-	}).scrolla({
-		mobile: false,
-		once: true
-	})
-
-	// Typing animation
-	new Typed("#identity", {
-		strings: [
-			"My name is Bennett.^2000",
-			"I'm an innovator.",
-			"I'm a tech entrepreneur.",
-			"I'm a lifelong learner."
-		],
-		typeSpeed: 80,
-		backSpeed: 80,
-		loop: true
-	})
-
-	// Make type cursor blink
-	$(".typed-cursor").addClass("animated flash infinite")
+// Reveal animation on scroll
+$animate.attr({
+	"data-animate": "fadeIn",
+	"data-duration": ".6s"
+}).scrolla({
+	mobile: false,
+	once: true
 })
+
+// Start typing if the text is within viewport
+function startTyping() {
+	const rect = identity.getBoundingClientRect()
+
+	if (rect.top >= 0 && rect.bottom <= $window.height()) {
+		// Typing animation
+		new Typed(identity, {
+			strings: [
+				"I'm a programmer.",
+				"I'm an innovator.",
+				"I'm a tech entrepreneur.",
+				"I'm a lifelong learner.",
+				"My name is Bennett."
+			],
+			typeSpeed: 45,
+			backSpeed: 45
+		})
+
+		$window.off("scroll", startTyping)
+	}
+}
+$window.scroll(startTyping)
+startTyping()
