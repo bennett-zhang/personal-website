@@ -53,14 +53,32 @@
 		font-size: $display4-size * $display-xs-scale;
 	}
 }
+@keyframes cover-filter {
+	0%,
+	100% {
+		filter: hue-rotate(0deg) brightness(75%);
+	}
+
+	50% {
+		filter: hue-rotate(180deg) brightness(75%);
+	}
+}
+
+body,
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 header {
 	background-color: $header-bg;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
 }
 
 #cover {
 	position: fixed;
 	z-index: -10;
+	animation: cover-filter 5s infinite;
 }
 
 #banner {
@@ -95,6 +113,10 @@ header {
 .col,
 [class^=col-] {
 	margin: 15px 0;
+}
+
+.reveal {
+	animation-name: fadeIn;
 }
 
 #portrait {

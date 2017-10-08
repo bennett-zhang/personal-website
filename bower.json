@@ -29,8 +29,8 @@
 		"bootstrap": "v4.0.0-beta",
 		"typed.js": "^2.0.6",
 		"animate.css": "^3.5.2",
-		"jquery-scrolla": "https://github.com/maximzhurkin/jquery-scrolla.git",
 		"trianglify": "^1.1.0",
-		"font-awesome": "Font-Awesome#^4.7.0"
+		"font-awesome": "Font-Awesome#^4.7.0",
+		"inview": "https://github.com/protonet/jquery.inview.git#^1.1.2"
 	}
 }

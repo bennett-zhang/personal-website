@@ -1,13 +1,13 @@
 const $window = $(window)
 const $body = $("body")
-const identity = $("#identity")[0]
-const $animate = $(".col, [class^=col-]")
-let $svg
+const $identity = $("#identity")
+const $col = $(".col, [class^=col-]")
+let $cover
 
 // Scale triangle pattern according to window dimensions
 function resize() {
-	if ($svg)
-		$svg.remove()
+	if ($cover)
+		$cover.remove()
 
 	// Triangle pattern
 	const pattern = Trianglify({
@@ -18,28 +18,30 @@ function resize() {
 		y_colors: "YlGnBu"
 	})
 
-	$svg = $(pattern.svg()).attr("id", "cover")
-	$body.prepend($svg)
+	$cover = $(pattern.svg()).attr("id", "cover")
+	$body.prepend($cover)
 }
 resize()
 $window.resize(resize)
 
 // Reveal animation on scroll
-$animate.attr({
-	"data-animate": "fadeIn",
-	"data-duration": ".6s"
-}).scrolla({
-	mobile: false,
-	once: true
+$col.addClass("invisible")
+$col.on("inview", (evt, visible) => {
+	if (visible) {
+		const $target = $(evt.target)
+
+		$target.removeClass("invisible")
+		$target.addClass("animated reveal")
+
+		$target.off("inview")
+	}
 })
 
 // Start typing if the text is within viewport
-function startTyping() {
-	const rect = identity.getBoundingClientRect()
-
-	if (rect.top >= 0 && rect.bottom <= $window.height()) {
+$identity.on("inview", (evt, visible) => {
+	if (visible) {
 		// Typing animation
-		new Typed(identity, {
+		new Typed($identity[0], {
 			strings: [
 				"I'm an innovator.",
 				"I'm a tech entrepreneur.",
@@ -50,8 +52,6 @@ function startTyping() {
 			backSpeed: 45
 		})
 
-		$window.off("scroll", startTyping)
+		$identity.off("inview")
 	}
-}
-$window.scroll(startTyping)
-startTyping()
+})

@@ -57,7 +57,7 @@ module.exports = grunt => {
 						"bower_components/jquery/dist/jquery.min.js",
 						"bower_components/popper.js/dist/umd/popper.min.js",
 						"bower_components/bootstrap/dist/js/bootstrap.min.js",
-						"bower_components/jquery-scrolla/dist/scrolla.jquery.min.js",
+						"bower_components/inview/jquery.inview.min.js",
 						"bower_components/typed.js/lib/typed.min.js",
 						"bower_components/trianglify/dist/trianglify.min.js",
 						"public/js/fancify.min.js"
@@ -92,8 +92,12 @@ module.exports = grunt => {
 				},
 				options: {
 					ignore: [
+						".collapse",
+						".collapsing",
 						".collapse.show",
-						".collapsing"
+						".animated",
+						".reveal",
+						".typed-cursor"
 					]
 				}
 			}
