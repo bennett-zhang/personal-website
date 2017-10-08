@@ -1,5 +1,6 @@
 @import "variables";
 @import "bootstrap/scss/bootstrap";
+@import "font-awesome/scss/font-awesome.scss";
 @import "animate.css/animate.min";
 @include media-breakpoint-down(md) {
 	.display-1 {
@@ -53,6 +54,10 @@
 	}
 }
 
+header {
+	background-color: $header-bg;
+}
+
 #cover {
 	position: fixed;
 	z-index: -10;
@@ -87,7 +92,8 @@
 	padding: 15px;
 }
 
-[class^=col] {
+.col,
+[class^=col-] {
 	margin: 15px 0;
 }
 
@@ -108,7 +114,7 @@
 
 footer {
 	width: 100%;
-	background: $footer-bg;
+	background-color: $footer-bg;
 
 	.list-inline {
 		margin: 0;

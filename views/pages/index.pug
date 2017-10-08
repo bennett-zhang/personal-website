@@ -4,6 +4,8 @@ html
 	include ../partials/head.pug
 
 	body
+		include ../partials/header.pug
+
 		section#banner.d-flex.align-items-center
 			.container
 				h1.display-2.divider Bennett Zhang
@@ -23,9 +25,15 @@ html
 						p Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
 						p Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
 						.btn-group
-							a(href="pdf/resume.pdf" target="_blank").btn.btn-light R&eacute;sum&eacute;
-							a(href="https://github.com/bennett-zhang/" target="_blank").btn.btn-dark Github
-							a(href="https://www.linkedin.com/in/bennett-d-zhang-34323813b" target="_blank").btn.btn-primary Linkedin
+							a(href="pdf/resume.pdf" target="_blank").btn.btn-light
+								span.fa.fa-user-circle
+								| &nbsp;R&eacute;sum&eacute;
+							a(href="https://github.com/bennett-zhang/" target="_blank").btn.btn-dark
+								span.fa.fa-github
+								| &nbsp;Github
+							a(href="https://www.linkedin.com/in/bennett-d-zhang-34323813b" target="_blank").btn.btn-primary
+								span.fa.fa-linkedin-square
+								| &nbsp;Linkedin
 
 				.row
 					.col-12.col-md-6

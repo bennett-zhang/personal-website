@@ -49,6 +49,7 @@ $display-xs-scale: 0.55;
 /* Background colors */
 $bg-color: #2e3240;
 $bg-color-light: lighten($bg-color, 5%);
+$header-bg: $bg-color-light;
 $body-bg: $bg-color;
 $list-group-bg: $bg-color-light;
 $card-bg: $bg-color-light;

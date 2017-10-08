@@ -6,6 +6,19 @@ module.exports = grunt => {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		banner: "/*! <%= pkg.name %> v<%= pkg.version %> | <%= grunt.template.today('yyyy-mm-dd') %> | (c) <%= pkg.author %> | <%= pkg.repository.url %> */",
+		bowercopy: {
+			fonts: {
+				files: {
+					"fontawesome-webfont.woff2": "font-awesome/fonts/fontawesome-webfont.woff2",
+					"fontawesome-webfont.woff": "font-awesome/fonts/fontawesome-webfont.woff",
+					"fontawesome-webfont.ttf": "font-awesome/fonts/fontawesome-webfont.ttf",
+					"fontawesome-webfont.svg": "font-awesome/fonts/fontawesome-webfont.svg"
+				},
+				options: {
+					destPrefix: "public/fonts"
+				}
+			}
+		},
 		pug: {
 			dist: {
 				files: {
@@ -76,6 +89,12 @@ module.exports = grunt => {
 			dist: {
 				files: {
 					"public/css/master.min.css": "public/*.html"
+				},
+				options: {
+					ignore: [
+						".collapse.show",
+						".collapsing"
+					]
 				}
 			}
 		},
@@ -102,13 +121,13 @@ module.exports = grunt => {
 		},
 		usebanner: {
 			dist: {
+				files: {
+					"public/css/master.min.css": ["public/css/master.min.css"]
+				},
 				options: {
 					position: "top",
 					banner: "<%= banner %>",
 					linebreak: true
-				},
-				files: {
-					"public/css/master.min.css": ["public/css/master.min.css"]
 				}
 			}
 		},
@@ -156,5 +175,8 @@ module.exports = grunt => {
 		}
 	})
 
-	grunt.registerTask("default", ["concurrent"])
+	grunt.registerTask("default", [
+		"bowercopy",
+		"concurrent"
+	])
 }

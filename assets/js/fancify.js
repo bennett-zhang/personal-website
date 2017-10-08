@@ -1,7 +1,7 @@
 const $window = $(window)
 const $body = $("body")
 const identity = $("#identity")[0]
-const $animate = $("[class^=col]")
+const $animate = $(".col, [class^=col-]")
 let $svg
 
 // Scale triangle pattern according to window dimensions
