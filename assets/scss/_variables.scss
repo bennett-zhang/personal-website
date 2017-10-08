@@ -1,5 +1,6 @@
-$bg-color: #2e3040;
+$bg-color: #2e3240;
 $bg-color-light: lighten($bg-color, 5%);
+$body-bg: $bg-color;
 $list-group-bg: $bg-color-light;
 $card-bg: $bg-color-light;
 $footer-bg: $bg-color-light;
