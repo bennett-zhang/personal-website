@@ -62,6 +62,12 @@
 	height: 100vh;
 }
 
+.divider {
+	padding-bottom: 0.5em;
+	border-bottom: solid $divider-width $divider-color;
+	margin-bottom: 0.5em;
+}
+
 #wrapper {
 	position: relative;
 	background-color: $bg-color;
@@ -113,8 +119,8 @@ footer {
 
 			&:not(:last-child) {
 				margin-right: 15px;
-				border-right: solid $footer-divider-width $white;
-				padding-right: 15px + $footer-divider-width;
+				border-right: solid $divider-width $divider-color;
+				padding-right: 15px + $divider-width;
 			}
 		}
 	}
