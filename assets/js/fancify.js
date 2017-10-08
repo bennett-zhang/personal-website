@@ -13,7 +13,6 @@ function resize() {
 	const pattern = Trianglify({
 		width: $window.width() || 1,
 		height: $window.height() || 1,
-		cell_size: 50,
 		seed: "bennett",
 		x_colors: "RdBu",
 		y_colors: "YlGnBu"
@@ -42,7 +41,6 @@ function startTyping() {
 		// Typing animation
 		new Typed(identity, {
 			strings: [
-				"I'm a programmer.",
 				"I'm an innovator.",
 				"I'm a tech entrepreneur.",
 				"I'm a lifelong learner.",
