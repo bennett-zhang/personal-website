@@ -3,53 +3,53 @@
 @import "animate.css/animate.min";
 @include media-breakpoint-down(md) {
 	.display-1 {
-		font-size: $display1-size * 0.85;
+		font-size: $display1-size * $display-md-scale;
 	}
 
 	.display-2 {
-		font-size: $display2-size * 0.85;
+		font-size: $display2-size * $display-md-scale;
 	}
 
 	.display-3 {
-		font-size: $display3-size * 0.85;
+		font-size: $display3-size * $display-md-scale;
 	}
 
 	.display-4 {
-		font-size: $display4-size * 0.85;
+		font-size: $display4-size * $display-md-scale;
 	}
 }
 @include media-breakpoint-down(sm) {
 	.display-1 {
-		font-size: $display1-size * 0.7;
+		font-size: $display1-size * $display-sm-scale;
 	}
 
 	.display-2 {
-		font-size: $display2-size * 0.7;
+		font-size: $display2-size * $display-sm-scale;
 	}
 
 	.display-3 {
-		font-size: $display3-size * 0.7;
+		font-size: $display3-size * $display-sm-scale;
 	}
 
 	.display-4 {
-		font-size: $display4-size * 0.7;
+		font-size: $display4-size * $display-sm-scale;
 	}
 }
 @include media-breakpoint-down(xs) {
 	.display-1 {
-		font-size: $display1-size * 0.55;
+		font-size: $display1-size * $display-xs-scale;
 	}
 
 	.display-2 {
-		font-size: $display2-size * 0.55;
+		font-size: $display2-size * $display-xs-scale;
 	}
 
 	.display-3 {
-		font-size: $display3-size * 0.55;
+		font-size: $display3-size * $display-xs-scale;
 	}
 
 	.display-4 {
-		font-size: $display4-size * 0.55;
+		font-size: $display4-size * $display-xs-scale;
 	}
 }
 
@@ -86,9 +86,9 @@
 }
 
 #portrait {
-	width: 200px;
-	@include media-breakpoint-up(md) {
-		width: 250px;
+	width: $portrait-width;
+	@include media-breakpoint-down(sm) {
+		width: $portrait-sm-width;
 	}
 }
 
