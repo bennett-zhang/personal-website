@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+	<defs>
+		<style>
+			@font-face {
+				font-family: "Proxima Nova";
+				font-weight: bold;
+				url: ("../fonts/ProximaNova-Bold.otf");
+			}
+		</style>
+	</defs>
+
+	<mask id="mask" x="0" y="0" width="100%" height="100%">
+		<rect x="0" y="0" width="100%" height="100%" fill="white"/>
+		<text x="50%" y="50%" font-size="11" font-weight="bold" font-family="Proxima Nova" text-anchor="middle" alignment-baseline="central">BZ</text>
+	</mask>
+
+	<rect x="0" y="0" width="100%" height="100%" rx="5" ry="5" mask="url(#mask)"/>
+</svg>

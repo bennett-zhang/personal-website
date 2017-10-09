@@ -31,7 +31,7 @@ module.exports = grunt => {
 				files: [{
 					expand: true,
 					cwd: "assets/img",
-					src: ["**/*.{png,jpg,gif}"],
+					src: ["**/*.{png,jpg,gif,svg}"],
 					dest: "public/img"
 				}]
 			}
@@ -141,7 +141,7 @@ module.exports = grunt => {
 				tasks: ["pug"]
 			},
 			img: {
-				files: "assets/img/**/*.{png,jpg,gif}",
+				files: "assets/img/**/*.{png,jpg,gif,svg}",
 				tasks: ["imagemin"]
 			},
 			js: {
