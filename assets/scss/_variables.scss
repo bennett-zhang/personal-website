@@ -1,45 +1,45 @@
 /* Fonts */
 @font-face {
 	font-family: "Proxima Nova";
-	url: ("../fonts/ProximaNova-Regular.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-style: italic;
-	url: ("../fonts/ProximaNova-RegularIt.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 300;
-	url: ("../fonts/ProximaNova-Light.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 300;
-	font-style: italic;
-	url: ("../fonts/ProximaNova-LightIt.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 200;
-	url: ("../fonts/ProximaNova-Thin.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 200;
-	font-style: italic;
-	url: ("../fonts/ProximaNova-ThinIt.otf");
-}
-@font-face {
-	font-family: "Proxima Nova";
 	font-weight: bold;
-	url: ("../fonts/ProximaNova-Bold.otf");
+	src: url("../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../fonts/ProximaNova-Bold.woff") format("woff");
 }
 @font-face {
 	font-family: "Proxima Nova";
 	font-weight: bold;
 	font-style: italic;
-	url: ("../fonts/ProximaNova-BoldIt.otf");
+	src: url("../fonts/ProximaNova-BoldIt.woff2") format("woff2"), url("../fonts/ProximaNova-BoldIt.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("../fonts/ProximaNova-Regular.woff2") format("woff2"), url("../fonts/ProximaNova-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	font-style: italic;
+	src: url("../fonts/ProximaNova-RegularIt.woff2") format("woff2"), url("../fonts/ProximaNova-RegularIt.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	font-weight: 300;
+	src: url("../fonts/ProximaNova-Light.woff2") format("woff2"), url("../fonts/ProximaNova-Light.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	font-weight: 300;
+	font-style: italic;
+	src: url("../fonts/ProximaNova-LightIt.woff2") format("woff2"), url("../fonts/ProximaNova-LightIt.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	font-weight: 200;
+	src: url("../fonts/ProximaNova-Thin.woff2") format("woff2"), url("../fonts/ProximaNova-Thin.woff") format("woff");
+}
+@font-face {
+	font-family: "Proxima Nova";
+	font-weight: 200;
+	font-style: italic;
+	src: url("../fonts/ProximaNova-ThinIt.woff2") format("woff2"), url("../fonts/ProximaNova-ThinIt.woff") format("woff");
 }
 $font-family-base: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $headings-font-weight: bold;

@@ -10,9 +10,7 @@ module.exports = grunt => {
 			fonts: {
 				files: {
 					"fontawesome-webfont.woff2": "font-awesome/fonts/fontawesome-webfont.woff2",
-					"fontawesome-webfont.woff": "font-awesome/fonts/fontawesome-webfont.woff",
-					"fontawesome-webfont.ttf": "font-awesome/fonts/fontawesome-webfont.ttf",
-					"fontawesome-webfont.svg": "font-awesome/fonts/fontawesome-webfont.svg"
+					"fontawesome-webfont.woff": "font-awesome/fonts/fontawesome-webfont.woff"
 				},
 				options: {
 					destPrefix: "public/fonts"
