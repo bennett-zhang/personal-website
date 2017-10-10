@@ -35,15 +35,21 @@ gulp.task("views", () => {
 
 gulp.task("scripts", () => {
 	gulp.src([
-		"bower_components/jquery/dist/jquery.min.js",
-		"bower_components/popper.js/dist/umd/popper.min.js{,.map}",
-		"bower_components/bootstrap/dist/js/bootstrap.min.js",
-		"bower_components/inview/jquery.inview.min.js",
-		"bower_components/typed.js/lib/typed.min.js{,.map}",
-		"bower_components/trianglify/dist/trianglify.min.js"
+		"bower_components/jquery/dist/jquery.slim.js",
+		"bower_components/popper.js/dist/umd/popper.js",
+		"bower_components/bootstrap/dist/js/bootstrap.js",
+		"bower_components/inview/jquery.inview.js",
+		"bower_components/typed.js/lib/typed.js",
+		"bower_components/trianglify/dist/trianglify.js"
 	])
 		.pipe($.plumber())
 		.pipe($.if(!rebuild, $.changed("dist/scripts")))
+		.pipe($.sourcemaps.init())
+		.pipe($.uglify())
+		.pipe($.rename({
+			suffix: ".min"
+		}))
+		.pipe($.sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/scripts"))
 
 	return gulp.src("src/scripts/**/*.js")
@@ -58,7 +64,7 @@ gulp.task("scripts", () => {
 			suffix: ".min"
 		}))
 		.pipe($.banner(`/* ${banner} */\n`))
-		.pipe($.sourcemaps.write("."))
+		.pipe($.sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/scripts"))
 })
 
@@ -75,7 +81,7 @@ gulp.task("styles", () => {
 			suffix: ".min"
 		}))
 		.pipe($.banner(`/* ${banner} */\n`))
-		.pipe($.sourcemaps.write("."))
+		.pipe($.sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/styles"))
 })
 
