@@ -66,6 +66,10 @@
 	}
 }
 
+::selection {
+	background-color: $selection-bg;
+}
+
 body,
 html {
 	-webkit-font-smoothing: antialiased;
@@ -123,6 +127,7 @@ header {
 
 #portrait {
 	width: $portrait-width;
+
 	@include media-breakpoint-down(sm) {
 		width: $portrait-sm-width;
 	}
