@@ -1,3 +1,5 @@
+"use strict"
+
 const $window = $(window)
 const $body = $("body")
 const $identity = $("#identity")
@@ -24,7 +26,7 @@ function resize() {
 resize()
 $window.resize(resize)
 
-// Reveal animation on scroll
+// Trigger reveal animation when element is within viewport
 $col.addClass("invisible")
 $col.on("inview", (evt, visible) => {
 	if (visible) {

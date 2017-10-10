@@ -84,7 +84,8 @@ header {
 #cover {
 	position: fixed;
 	z-index: -10;
-	animation: cover-filter 5s infinite;
+	animation: cover-filter 5s steps(30) infinite;
+	transform: translateZ(0);
 }
 
 #banner {
