@@ -4,7 +4,7 @@ const $ = gulpLoadPlugins()
 const del = require("del")
 const runSequence = require("run-sequence")
 const pkg = require("./package.json")
-const banner = `<%= pkg.name %> v<%= pkg.version %> | ${new Date().toJSON().slice(0,10)} | (c) <%= pkg.author %> | <%= pkg.repository.url %>`
+const banner = `${pkg.name} v${pkg.version} | ${new Date().toJSON().slice(0,10)} | (c) ${pkg.author} | ${pkg.repository.url}`
 
 let rebuild = false
 
@@ -30,7 +30,7 @@ gulp.task("views", () => {
 		.pipe($.if(!rebuild, $.changed("dist")))
 		.pipe($.pug())
 		.pipe($.htmlmin())
-		.pipe($.banner(`<!-- ${banner} -->\n`, {pkg}))
+		.pipe($.banner(`<!-- ${banner} -->\n`))
 		.pipe(gulp.dest("dist"))
 })
 
@@ -58,7 +58,7 @@ gulp.task("scripts", () => {
 		.pipe($.rename({
 			suffix: ".min"
 		}))
-		.pipe($.banner(`/* ${banner} */\n`, {pkg}))
+		.pipe($.banner(`/* ${banner} */\n`))
 		.pipe($.sourcemaps.write("."))
 		.pipe(gulp.dest("dist/scripts"))
 })
@@ -75,7 +75,7 @@ gulp.task("styles", () => {
 		.pipe($.rename({
 			suffix: ".min"
 		}))
-		.pipe($.banner(`/* ${banner} */\n`, {pkg}))
+		.pipe($.banner(`/* ${banner} */\n`))
 		.pipe($.sourcemaps.write("."))
 		.pipe(gulp.dest("dist/styles"))
 })
