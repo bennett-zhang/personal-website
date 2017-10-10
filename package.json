@@ -1,48 +1,61 @@
 {
-	"name": "personal-website",
-	"version": "0.5.0",
-	"description": "My personal website showcasing my projects, skills, and experience.",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bennett-zhang/personal-website"
-	},
-	"keywords": [
-		"resume",
-		"activities",
-		"skills",
-		"experience",
-		"projects",
-		"hobbies"
-	],
-	"author": "Bennett Zhang",
-	"license": "MIT",
-	"dependencies": {
-		"express": "^4.15.4"
-	},
-	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-es2015": "^6.24.1",
-		"babelify": "^7.3.0",
-		"grunt": "^1.0.1",
-		"grunt-autoprefixer": "^3.0.4",
-		"grunt-banner": "^0.6.0",
-		"grunt-bowercopy": "^1.2.4",
-		"grunt-browserify": "^5.2.0",
-		"grunt-concurrent": "^2.3.1",
-		"grunt-contrib-concat": "^1.0.1",
-		"grunt-contrib-cssmin": "^2.2.1",
-		"grunt-contrib-imagemin": "^2.0.1",
-		"grunt-contrib-pug": "^1.0.0",
-		"grunt-contrib-uglify": "^3.1.0",
-		"grunt-contrib-watch": "^1.0.0",
-		"grunt-nodemon": "^0.4.2",
-		"grunt-sass": "^2.0.0",
-		"grunt-uncss": "^0.7.1",
-		"load-grunt-tasks": "^3.5.2"
-	}
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "A personal website showcasing my projects, skills, and experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bennett-zhang/personal-website.git"
+  },
+  "author": "Bennett Zhang",
+  "license": "MIT",
+  "keywords": [
+    "resume",
+    "projects",
+    "skills",
+    "experience",
+    "activities",
+    "hobbies"
+  ],
+  "homepage": "https://github.com/bennett-zhang/personal-website",
+  "bugs": {
+    "url": "https://github.com/bennett-zhang/personal-website/issues"
+  },
+  "private": true,
+  "engines": {
+    "node": "^6.10.3"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-banner": "^0.1.3",
+    "gulp-changed": "^3.1.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "postcss-uncss": "^0.15.0",
+    "run-sequence": "^2.2.0",
+    "uncss": "^0.15.0"
+  }
 }

@@ -6,7 +6,8 @@ const http = require("http").Server(app)
 const port = process.env.PORT || 8080
 
 app.set("view engine", "ejs")
-app.use(express.static("public"))
+
+app.use(express.static("dist"))
 
 app.get("/", (req, res) => {
 	res.sendFile("index.html")

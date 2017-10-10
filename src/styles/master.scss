@@ -1,0 +1,157 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome/scss/font-awesome.scss";
+@import "animate.css/animate.min";
+
+@include media-breakpoint-down(md) {
+	.display-1 {
+		font-size: $display1-size * $display-md-scale;
+	}
+
+	.display-2 {
+		font-size: $display2-size * $display-md-scale;
+	}
+
+	.display-3 {
+		font-size: $display3-size * $display-md-scale;
+	}
+
+	.display-4 {
+		font-size: $display4-size * $display-md-scale;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.display-1 {
+		font-size: $display1-size * $display-sm-scale;
+	}
+
+	.display-2 {
+		font-size: $display2-size * $display-sm-scale;
+	}
+
+	.display-3 {
+		font-size: $display3-size * $display-sm-scale;
+	}
+
+	.display-4 {
+		font-size: $display4-size * $display-sm-scale;
+	}
+}
+@include media-breakpoint-down(xs) {
+	.display-1 {
+		font-size: $display1-size * $display-xs-scale;
+	}
+
+	.display-2 {
+		font-size: $display2-size * $display-xs-scale;
+	}
+
+	.display-3 {
+		font-size: $display3-size * $display-xs-scale;
+	}
+
+	.display-4 {
+		font-size: $display4-size * $display-xs-scale;
+	}
+}
+
+@keyframes cover-filter {
+	0%,
+	100% {
+		filter: hue-rotate(0deg) brightness(75%);
+	}
+
+	50% {
+		filter: hue-rotate(180deg) brightness(75%);
+	}
+}
+
+body,
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+header {
+	background-color: $header-bg;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+}
+
+#cover {
+	position: fixed;
+	z-index: -10;
+	animation: cover-filter 5s infinite;
+}
+
+#banner {
+	height: 100vh;
+}
+
+.divider {
+	padding-bottom: 0.5em;
+	border-bottom: solid $divider-width $divider-color;
+	margin-bottom: 0.5em;
+}
+
+#wrapper {
+	position: relative;
+	background-color: $bg-color;
+
+	&::before {
+		position: absolute;
+		top: calc(1px - #{$wrapper-triangle-height});
+		width: 100vw;
+		height: $wrapper-triangle-height;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' preserveAspectRatio='none'><polygon points='0,100 0,99 100,0 100,100' style='fill:#{$bg-color}'></polygon></svg>");
+		background-size: 100% 100%;
+		content: "";
+	}
+}
+
+.container {
+	padding: 15px;
+}
+
+.col,
+[class^=col-] {
+	margin: 15px 0;
+}
+
+.reveal {
+	animation-name: fadeIn;
+}
+
+#portrait {
+	width: $portrait-width;
+	@include media-breakpoint-down(sm) {
+		width: $portrait-sm-width;
+	}
+}
+
+#identity:empty::before {
+	content: "\200b";
+}
+
+.typed-cursor {
+	animation: flash 2s infinite;
+}
+
+footer {
+	width: 100%;
+	background-color: $footer-bg;
+
+	.list-inline {
+		margin: 0;
+		line-height: 1;
+
+		.list-inline-item {
+			margin: 8px 0;
+
+			&:not(:last-child) {
+				margin-right: 15px;
+				border-right: solid $divider-width $divider-color;
+				padding-right: 15px + $divider-width;
+			}
+		}
+	}
+}
