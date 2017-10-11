@@ -9,19 +9,20 @@ const banner = `${pkg.name} v${pkg.version} | ${new Date().toJSON().slice(0,10)}
 
 let rebuild = false
 
-const plugins = [
+const postcssPlugins = [
 	require("postcss-uncss")({
 		html: ["dist/**/*.html"],
 		ignore: [
-			".collapse",
-			".collapsing",
-			".collapse.show",
+			/\.collaps/,
+			/\.fade/,
+			/\.tooltip/,
+			/\.fixed-top/,
 			".animated",
 			".reveal",
 			".typed-cursor"
 		]
 	}),
-	$.autoprefixer,
+	require("autoprefixer"),
 	require("cssnano")
 ]
 
@@ -71,14 +72,14 @@ gulp.task("scripts", () => {
 })
 
 gulp.task("styles", () => {
-	return gulp.src("src/styles/**/*.scss")
+	return gulp.src("src/styles/**/[^_]*.scss")
 		.pipe($.plumber())
 		.pipe($.if(!rebuild, $.changed("dist/styles")))
 		.pipe($.sourcemaps.init())
 		.pipe($.sass.sync({
 			includePaths: ["bower_components"]
 		}).on("error", $.sass.logError))
-		.pipe($.postcss(plugins))
+		.pipe($.postcss(postcssPlugins))
 		.pipe($.rename({
 			suffix: ".min"
 		}))
@@ -88,7 +89,7 @@ gulp.task("styles", () => {
 })
 
 gulp.task("images", () => {
-	return gulp.src("src/images/**/*.{png,jpg,gif,svg}")
+	return gulp.src("src/images/**/*.{png,jpg,gif,svg,ico}")
 		.pipe($.plumber())
 		.pipe($.if(!rebuild, $.changed("dist/images")))
 		.pipe($.imagemin())
@@ -112,14 +113,22 @@ gulp.task("pdfs", () => {
 		.pipe(gulp.dest("dist/pdfs"))
 })
 
+gulp.task("other", () => {
+	return gulp.src("src/*")
+		.pipe($.plumber())
+		.pipe($.if(!rebuild, $.changed("dist")))
+		.pipe(gulp.dest("dist"))
+})
+
 gulp.task("watch", () => {
 	rebuild = false
 	gulp.watch("src/views/**/*.pug", ["views"])
 	gulp.watch("src/scripts/**/*.js", ["scripts"])
 	gulp.watch("src/styles/**/*.scss", ["styles"])
-	gulp.watch("src/images/**/*.{png,jpg,gif,svg}", ["images"])
+	gulp.watch("src/images/**/*.{png,jpg,gif,svg,ico}", ["images"])
 	gulp.watch("src/fonts/**/*.{woff2,woff}", ["fonts"])
 	gulp.watch("src/pdfs/**/*.pdf", ["pdfs"])
+	gulp.watch("src/*", ["other"])
 })
 
 gulp.task("start", () => {
@@ -127,6 +136,11 @@ gulp.task("start", () => {
 		script: "index.js"
 	})
 })
+
+gulp.task("default", [
+	"watch",
+	"start"
+])
 
 gulp.task("rebuild", () => {
 	rebuild = true
@@ -137,15 +151,8 @@ gulp.task("rebuild", () => {
 			"scripts",
 			"images",
 			"fonts",
-			"pdfs"
-		], "styles", [
-			"watch",
-			"start"
-		])
+			"pdfs",
+			"other"
+		], "styles", "default")
 	})
 })
-
-gulp.task("default", [
-	"watch",
-	"start"
-])

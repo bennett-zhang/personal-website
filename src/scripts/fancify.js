@@ -6,6 +6,9 @@ const $identity = $("#identity")
 const $col = $(".col, [class^=col-]")
 let $cover
 
+// Enable tooltips
+$("[data-toggle=tooltip]").tooltip()
+
 // Scale triangle pattern according to window dimensions
 function resize() {
 	if ($cover)

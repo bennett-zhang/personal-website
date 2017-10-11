@@ -49,17 +49,17 @@ $display-sm-scale: 0.673;
 $display-xs-scale: 0.51;
 
 /* Background colors */
-$bg-color: #2e3240;
-$bg-color-light: lighten($bg-color, 5%);
-$header-bg: $bg-color-light;
+$bg-color: #fff;
+$bg-color-secondary: darken($bg-color, 5%);
+$navbar-bg: transparentize($bg-color-secondary, 0.3);
 $body-bg: $bg-color;
-$list-group-bg: $bg-color-light;
-$card-bg: $bg-color-light;
-$footer-bg: $bg-color-light;
+$list-group-bg: $bg-color-secondary;
+$card-bg: $bg-color-secondary;
+$footer-bg: $bg-color-secondary;
 $selection-bg: darken($bg-color, 5%);
 
 /* Text colors */
-$body-color: #fff;
+$body-color: #000;
 $blue: #1992c6;
 
 /* Other colors */
@@ -70,6 +70,11 @@ $wrapper-triangle-height: 10vw;
 $portrait-width: 250px;
 $portrait-sm-width: 200px;
 $divider-width: 2px;
+
+/* Transitions and Animations */
+$cover-filter-animation-duration: 5s;
+$cover-filter-animation-steps: 20;
+$typed-cursor-animation-duration: 2s;
 
 /* Options */
 $enable-shadows: true;
