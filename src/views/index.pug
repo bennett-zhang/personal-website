@@ -4,9 +4,9 @@ html
 	include partials/head.pug
 
 	body
-		include partials/header.pug
+		include partials/nav.pug
 
-		section.banner.d-flex.align-items-center
+		header.banner.d-flex.align-items-center
 			.container
 				h1.display-responsive-1.divider Bennett D. Zhang
 				p.lead School of Computer Science at Carnegie Mellon University
@@ -19,17 +19,18 @@ html
 							img.portrait.rounded-circle(src="images/portrait.jpg" alt="portrait")
 
 					.col-12.col-lg-8
-						h2#identity.display-responsive-4.text-capitalize
-						#identity-strings.d-none
-							p I'm an innovator.
-							p I'm a tech entrepreneur.
-							p I'm a lifelong learner.
-							p My name is Bennett.
+						header
+							h2#identity.display-responsive-4.text-capitalize
+							#identity-strings.d-none
+								p I'm an innovator.
+								p I'm a tech entrepreneur.
+								p I'm a lifelong learner.
+								p My name is Bennett.
 
-						p Undergraduate at Carnegie Mellon University studying computer science. Seeking summer internship to consolidate and compile my skills and experience assisting a company's software development needs.
-						p Resourceful, effective, and detail-oriented computer scientist possessing strong leadership and communication skills. Innovative programmer who integrates keen organizational prowess with ingenuity to produce polished projects and programs.
-						p Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
-						p Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
+							p.lead Undergraduate at Carnegie Mellon University studying computer science. Seeking summer internship to consolidate and compile my skills and experience assisting a company's software development needs.
+							p.lead Resourceful, effective, and detail-oriented computer scientist possessing strong leadership and communication skills. Innovative programmer who integrates keen organizational prowess with ingenuity to produce polished projects and programs.
+							p.lead Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
+							p.lead Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
 
 						.btn-group
 							a(href="pdfs/resume.pdf" target="_blank").btn.btn-info

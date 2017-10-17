@@ -5,7 +5,11 @@ const $ = require("gulp-load-plugins")()
 const del = require("del")
 const runSequence = require("run-sequence")
 const pkg = require("./package.json")
-const banner = `${pkg.name} v${pkg.version} | ${new Date().toJSON().slice(0,10)} | (c) ${pkg.author} | ${pkg.repository.url}`
+const banner = `/*!
+ * ${pkg.name} v${pkg.version} (${pkg.homepage})
+ * Copyright (c) ${new Date().getFullYear()} ${pkg.author}
+ * Licensed under ${pkg.license} (https://github.com/bennett-zhang/personal-website/blob/master/LICENSE)
+ */`
 
 let rebuild = false
 
@@ -32,7 +36,6 @@ gulp.task("views", () => {
 		.pipe($.if(!rebuild, $.changed("dist")))
 		.pipe($.pug())
 		.pipe($.htmlmin())
-		.pipe($.banner(`<!-- ${banner} -->\n`))
 		.pipe(gulp.dest("dist"))
 })
 
@@ -42,17 +45,23 @@ gulp.task("scripts", () => {
 		"bower_components/popper.js/dist/umd/popper.js",
 		"bower_components/bootstrap/dist/js/bootstrap.js",
 		"bower_components/inview/jquery.inview.js",
-		"bower_components/typed.js/lib/typed.js",
-		"bower_components/trianglify/dist/trianglify.js"
+		"bower_components/typed.js/lib/typed.js"
 	])
 		.pipe($.plumber())
 		.pipe($.if(!rebuild, $.changed("dist/scripts")))
 		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
+		.pipe($.uglify({
+			output: {
+				comments: /^!|license|copyright|author/i
+			}
+		}))
 		.pipe($.rename({
 			suffix: ".min"
 		}))
 		.pipe($.sourcemaps.write("maps"))
+		.pipe(gulp.dest("dist/scripts"))
+
+	gulp.src("bower_components/trianglify/dist/trianglify.min.js")
 		.pipe(gulp.dest("dist/scripts"))
 
 	return gulp.src("src/scripts/**/*.js")
@@ -66,7 +75,7 @@ gulp.task("scripts", () => {
 		.pipe($.rename({
 			suffix: ".min"
 		}))
-		.pipe($.banner(`/* ${banner} */\n`))
+		.pipe($.banner(banner))
 		.pipe($.sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/scripts"))
 })
@@ -83,7 +92,7 @@ gulp.task("styles", () => {
 		.pipe($.rename({
 			suffix: ".min"
 		}))
-		.pipe($.banner(`/* ${banner} */\n`))
+		.pipe($.banner(banner))
 		.pipe($.sourcemaps.write("maps"))
 		.pipe(gulp.dest("dist/styles"))
 })
