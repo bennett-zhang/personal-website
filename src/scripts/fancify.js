@@ -1,5 +1,12 @@
 "use strict"
 
+window.jQuery = window.$ = require("jquery")
+window.Popper = require("popper")
+require("bootstrap")
+const Trianglify = require("trianglify.min")
+require("jquery.inview")
+const Typed = require("typed")
+
 const $window = $(window)
 const $body = $("body")
 const $identitySpan = $("<span>").appendTo("#identity")

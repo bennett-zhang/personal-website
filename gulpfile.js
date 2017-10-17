@@ -5,6 +5,12 @@ const $ = require("gulp-load-plugins")()
 const del = require("del")
 const runSequence = require("run-sequence")
 const pkg = require("./package.json")
+
+const babelify = require("babelify")
+const browserify = require("browserify")
+const buffer = require("vinyl-buffer")
+const source = require("vinyl-source-stream")
+
 const banner = `/*!
  * ${pkg.name} v${pkg.version} (${pkg.homepage})
  * Copyright (c) ${new Date().getFullYear()} ${pkg.author}
@@ -40,43 +46,40 @@ gulp.task("views", () => {
 })
 
 gulp.task("scripts", () => {
-	gulp.src([
-		"bower_components/jquery/dist/jquery.slim.js",
-		"bower_components/popper.js/dist/umd/popper.js",
-		"bower_components/bootstrap/dist/js/bootstrap.js",
-		"bower_components/inview/jquery.inview.js",
-		"bower_components/typed.js/lib/typed.js"
-	])
+	return browserify({
+		entries: ["src/scripts/fancify.js"],
+		debug: true,
+		paths: [
+			"bower_components/jquery/dist",
+			"bower_components/popper.js/dist",
+			"bower_components/bootstrap/dist/js",
+			"bower_components/trianglify/dist",
+			"bower_components/inview",
+			"bower_components/typed.js/lib"
+		],
+		transform: [
+			babelify.configure({
+				presets: ["env"]
+			})
+		]
+	})
+		.bundle()
+		.on("error", err => {
+			console.log(`Error: ${err.message}`)
+		})
 		.pipe($.plumber())
+		.pipe(source("fancify.js"))
+		.pipe(buffer())
 		.pipe($.if(!rebuild, $.changed("dist/scripts")))
-		.pipe($.sourcemaps.init())
-		.pipe($.uglify({
-			output: {
-				comments: /^!|license|copyright|author/i
-			}
-		}))
-		.pipe($.rename({
-			suffix: ".min"
-		}))
-		.pipe($.sourcemaps.write("maps"))
-		.pipe(gulp.dest("dist/scripts"))
-
-	gulp.src("bower_components/trianglify/dist/trianglify.min.js")
-		.pipe(gulp.dest("dist/scripts"))
-
-	return gulp.src("src/scripts/**/*.js")
-		.pipe($.plumber())
-		.pipe($.if(!rebuild, $.changed("dist/scripts")))
-		.pipe($.sourcemaps.init())
-		.pipe($.babel({
-			"presets": ["env"]
+		.pipe($.sourcemaps.init({
+			loadMaps: true
 		}))
 		.pipe($.uglify())
 		.pipe($.rename({
 			suffix: ".min"
 		}))
 		.pipe($.banner(banner))
-		.pipe($.sourcemaps.write("maps"))
+		.pipe($.sourcemaps.write("."))
 		.pipe(gulp.dest("dist/scripts"))
 })
 
@@ -86,14 +89,18 @@ gulp.task("styles", () => {
 		.pipe($.if(!rebuild, $.changed("dist/styles")))
 		.pipe($.sourcemaps.init())
 		.pipe($.sass.sync({
-			includePaths: ["bower_components"]
+			includePaths: [
+				"bower_components/bootstrap/scss",
+				"bower_components/font-awesome/scss",
+				"bower_components/animate.css"
+			]
 		}).on("error", $.sass.logError))
 		.pipe($.postcss(postcssPlugins))
 		.pipe($.rename({
 			suffix: ".min"
 		}))
 		.pipe($.banner(banner))
-		.pipe($.sourcemaps.write("maps"))
+		.pipe($.sourcemaps.write("."))
 		.pipe(gulp.dest("dist/styles"))
 })
 
