@@ -1,0 +1,71 @@
+@mixin display-1 {
+	font-size: $display1-size;
+	font-weight: $display1-weight;
+	line-height: $display-line-height;
+}
+
+@mixin display-2 {
+	font-size: $display2-size;
+	font-weight: $display2-weight;
+	line-height: $display-line-height;
+}
+
+@mixin display-3 {
+	font-size: $display3-size;
+	font-weight: $display3-weight;
+	line-height: $display-line-height;
+}
+
+@mixin display-4 {
+	font-size: $display4-size;
+	font-weight: $display4-weight;
+	line-height: $display-line-height;
+}
+
+.display-responsive-1 {
+	@include media-breakpoint-up(sm) {
+		@include display-4;
+	}
+
+	@include media-breakpoint-up(md) {
+		@include display-3;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include display-2;
+	}
+
+	@include media-breakpoint-up(xl) {
+		@include display-1;
+	}
+}
+
+.display-responsive-2 {
+	@include media-breakpoint-up(sm) {
+		@include display-4;
+	}
+
+	@include media-breakpoint-up(md) {
+		@include display-3;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include display-2;
+	}
+}
+
+.display-responsive-3 {
+	@include media-breakpoint-up(md) {
+		@include display-4;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include display-3;
+	}
+}
+
+.display-responsive-4 {
+	@include media-breakpoint-up(md) {
+		@include display-4;
+	}
+}

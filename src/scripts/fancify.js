@@ -2,7 +2,7 @@
 
 const $window = $(window)
 const $body = $("body")
-const $identity = $(".identity")
+const $identitySpan = $("<span>").appendTo("#identity")
 const $col = $(".col, [class^=col-]")
 let $cover
 
@@ -43,17 +43,15 @@ $col.on("inview", (evt, visible) => {
 })
 
 // Start typing if the text is within viewport
-$identity.on("inview", (evt, visible) => {
+$identitySpan.on("inview", (evt, visible) => {
 	if (visible) {
 		// Typing animation
-		$identity.each(function() {
-			new Typed(this, {
-				stringsElement: "#identity-strings",
-				typeSpeed: 45,
-				backSpeed: 45
-			})
+		new Typed($identitySpan[0], {
+			stringsElement: "#identity-strings",
+			typeSpeed: 45,
+			backSpeed: 45
 		})
 
-		$identity.off("inview")
+		$identitySpan.off("inview")
 	}
 })
