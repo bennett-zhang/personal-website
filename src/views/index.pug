@@ -44,14 +44,14 @@ html
 
 				.row
 					.col-12.col-md-6
-						h1 Skills
+						h2 Skills
 						ul.list-group
 							- const skills = ["JavaScript (ECMAScript 6)", "HTML5", "CSS3", "Node.js", "Express", "Git", "Java", "Python", "WebGL", "L<sup>A</sup>T<sub>E</sub>X"]
 							each skill in skills
 								li.list-group-item !{skill}
 
 					.col
-						h1 Honors
+						h2 Honors
 						ul.list-group
 							- const honors = ["National Merit Finalist", "AP Scholar With Distinction", "Le Grand Concours Two Time Gold Medalist", "Grade 6 Piano With Merit", "Grade 5 Music Theory With Distinction"]
 							each honor in honors
@@ -62,7 +62,7 @@ html
 						.card
 							img(src="images/phone-binary.jpg" alt="iPhone and binary").card-img-top
 							.card-body
-								h4.card-title.divider Bit Stories
+								h3.card-title.divider Bit Stories
 								p.card-text Coordinated team and delegated workload for web app, which encourages creativity and iniduality in students through real time story-telling.
 								p.card-text Stories accessible through database powered by MongoDB. Unites Bootstrap, Socket.IO, and Angular APIs for a seamless, user-friendly experience.
 								a(href="https://bit-stories.herokuapp.com" target="_blank").btn.btn-primary
@@ -73,7 +73,7 @@ html
 						.card
 							img(src="images/julia.jpg" alt="Julia fractal").card-img-top
 							.card-body
-								h4.card-title.divider Fractal Explorer
+								h3.card-title.divider Fractal Explorer
 								p.card-text Developed website which uses WebGL to construct lightning-fast and scalable renderings of Mandelbrot and Julia fractals on the complex plane.
 								p.card-text Clean, dynamic interface that features intuitive gestures powered by Hammer.js. Optimized for most devices, including mobile and touch screens.
 								a(href="https://fractal-explorer.herokuapp.com" target="_blank").btn.btn-primary
@@ -84,7 +84,7 @@ html
 						.card
 							img(src="images/ultimate-t3.jpg" alt="ultimate tic tac toe").card-img-top
 							.card-body
-								h4.card-title.divider Ultimate T3
+								h3.card-title.divider Ultimate T3
 								p.card-text Website runs a highly strategic variant of classic tic-tac-toe called ultimate tic- tac-toe, played on a 9x9 board. Responsive design showcasing Bootstrap.
 								p.card-text Artificial intelligence uses minimax algorithm with alpha-beta pruning for efficient tree searching. Multiplayer mode utilizes Node.js, Express, and Socket.IO.
 								a(href="https://ultimate-t3.herokuapp.com" target="_blank").btn.btn-primary
