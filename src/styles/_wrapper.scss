@@ -10,5 +10,25 @@
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' preserveAspectRatio='none'><polygon points='0,100 100,0 100,100' style='fill:#{$wrapper-bg}'/></svg>");
 		background-size: 100% 100%;
 		content: "";
+
+		@include media-breakpoint-up(sm) {
+			top: -$wrapper-sm-triangle-height;
+			height: $wrapper-sm-triangle-height;
+		}
+
+		@include media-breakpoint-up(md) {
+			top: -$wrapper-md-triangle-height;
+			height: $wrapper-md-triangle-height;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: -$wrapper-lg-triangle-height;
+			height: $wrapper-lg-triangle-height;
+		}
+
+		@include media-breakpoint-up(xl) {
+			top: -$wrapper-xl-triangle-height;
+			height: $wrapper-xl-triangle-height;
+		}
 	}
 }

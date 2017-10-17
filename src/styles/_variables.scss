@@ -15,7 +15,11 @@ $selection-bg: transparentize($blue, 0.5);
 
 // Wrapper
 $wrapper-bg: transparentize($white, 0.2);
-$wrapper-triangle-height: 150px;
+$wrapper-triangle-height: 70px;
+$wrapper-sm-triangle-height: 90px;
+$wrapper-md-triangle-height: 110px;
+$wrapper-lg-triangle-height: 130px;
+$wrapper-xl-triangle-height: 150px;
 
 // Spacing
 $grid-gutter-height: 30px;
@@ -45,8 +49,8 @@ $cover-animation-duration: 5s;
 $cover-animation-steps: 25;
 
 // Portrait
-$portrait-width: 250px;
-$portrait-sm-width: 200px;
+$portrait-width: 200px;
+$portrait-md-width: 250px;
 
 // Identity
 $typed-cursor-animation-duration: 2s;

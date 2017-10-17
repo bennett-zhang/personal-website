@@ -8,11 +8,12 @@ html
 
 		section.banner.d-flex.align-items-center
 			.container
-				h1.d-none.d-xl-block.display-1.divider Bennett D. Zhang
-				h1.d-none.d-lg-block.d-xl-none.display-2.divider Bennett D. Zhang
-				h1.d-none.d-md-block.d-lg-none.display-3.divider Bennett D. Zhang
-				h1.d-none.d-sm-block.d-md-none.display-4.divider Bennett D. Zhang
-				h1.d-sm-none.divider Bennett D. Zhang
+				h1.divider
+					span.d-sm-none Bennett D. Zhang
+					span.d-none.d-sm-block.d-md-none.display-4 Bennett D. Zhang
+					span.d-none.d-md-block.d-lg-none.display-3 Bennett D. Zhang
+					span.d-none.d-lg-block.d-xl-none.display-2 Bennett D. Zhang
+					span.d-none.d-xl-block.display-1 Bennett D. Zhang
 				p.lead School of Computer Science at Carnegie Mellon University
 
 		section.wrapper
@@ -23,19 +24,20 @@ html
 							img.portrait.rounded-circle(src="images/portrait.jpg" alt="portrait")
 
 					.col-12.col-lg-8
-						h2.d-none.d-md-block.display-4.text-capitalize #[span.identity]
-						h2.d-md-none.text-capitalize #[span.identity]
+						h2.text-capitalize
+							span.d-md-none #[span.identity]
+							span.d-none.d-md-block.display-4 #[span.identity]
 						#identity-strings.d-none
 							p I'm an innovator.
 							p I'm a tech entrepreneur.
 							p I'm a lifelong learner.
 							p My name is Bennett.
-							
+
 						p Undergraduate at Carnegie Mellon University studying computer science. Seeking summer internship to consolidate and compile my skills and experience assisting a company's software development needs.
 						p Resourceful, effective, and detail-oriented computer scientist possessing strong leadership and communication skills. Innovative programmer who integrates keen organizational prowess with ingenuity to produce polished projects and programs.
 						p Motivated by advancements in technologies relating to artificial intelligence and machine learning. Demonstrates proficiency with regards to front and back-end web development using Node.js, HTML5, and ECMAScript 6.
 						p Coordinated and prioritized workouts and outreach events as captain for school's cross country and track teams.
-						
+
 						.btn-group
 							a(href="pdfs/resume.pdf" target="_blank").btn.btn-info
 								span.fa.fa-user-circle
