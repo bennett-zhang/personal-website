@@ -1,80 +1,55 @@
-/* Fonts */
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: bold;
-	src: url("../fonts/ProximaNova-Bold.woff2") format("woff2"), url("../fonts/ProximaNova-Bold.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: bold;
-	font-style: italic;
-	src: url("../fonts/ProximaNova-BoldIt.woff2") format("woff2"), url("../fonts/ProximaNova-BoldIt.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	src: url("../fonts/ProximaNova-Regular.woff2") format("woff2"), url("../fonts/ProximaNova-Regular.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-style: italic;
-	src: url("../fonts/ProximaNova-RegularIt.woff2") format("woff2"), url("../fonts/ProximaNova-RegularIt.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 300;
-	src: url("../fonts/ProximaNova-Light.woff2") format("woff2"), url("../fonts/ProximaNova-Light.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 300;
-	font-style: italic;
-	src: url("../fonts/ProximaNova-LightIt.woff2") format("woff2"), url("../fonts/ProximaNova-LightIt.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 200;
-	src: url("../fonts/ProximaNova-Thin.woff2") format("woff2"), url("../fonts/ProximaNova-Thin.woff") format("woff");
-}
-@font-face {
-	font-family: "Proxima Nova";
-	font-weight: 200;
-	font-style: italic;
-	src: url("../fonts/ProximaNova-ThinIt.woff2") format("woff2"), url("../fonts/ProximaNova-ThinIt.woff") format("woff");
-}
-
-$font-family-base: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+// Fonts
+$font-family-sans-serif: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $headings-font-weight: bold;
-$display-md-scale: 0.8363;
-$display-sm-scale: 0.673;
-$display-xs-scale: 0.51;
 
-/* Background colors */
-$bg-color: #fff;
-$bg-color-secondary: darken($bg-color, 5%);
-$navbar-bg: transparentize($bg-color-secondary, 0.3);
-$body-bg: $bg-color;
-$list-group-bg: $bg-color-secondary;
-$card-bg: $bg-color-secondary;
-$footer-bg: $bg-color-secondary;
-$selection-bg: darken($bg-color, 5%);
-
-/* Text colors */
-$body-color: #000;
+// Color system
+$white: #fff;
+$black: #000;
 $blue: #1992c6;
 
-/* Other colors */
-$divider-color: rgba(255, 255, 255, 0.125);
+// Body
+$body-bg: $white;
 
-/* Metrics */
-$wrapper-triangle-height: 10vw;
+// Selection
+$selection-bg: transparentize($blue, 0.5);
+
+// Wrapper
+$wrapper-bg: transparentize($white, 0.2);
+$wrapper-triangle-height: 150px;
+
+// Spacing
+$grid-gutter-height: 30px;
+$divider-width: 2px;
+$divider-color: transparentize($black, 0.875);
+
+// Navbars
+$navbar-bg: $wrapper-bg;
+$navbar-blur-amount: 10px;
+
+// List groups
+$list-group-bg: $wrapper-bg;
+
+// Cards
+$card-bg: $wrapper-bg;
+
+// Footer
+$footer-bg: $wrapper-bg;
+$footer-gutter-width: 30px;
+$footer-gutter-height: 16px;
+
+// Reveal
+$reveal-animation-name: fadeIn;
+
+// Cover
+$cover-animation-duration: 5s;
+$cover-animation-steps: 25;
+
+// Portrait
 $portrait-width: 250px;
 $portrait-sm-width: 200px;
-$divider-width: 2px;
 
-/* Transitions and Animations */
-$cover-filter-animation-duration: 5s;
-$cover-filter-animation-steps: 20;
+// Identity
 $typed-cursor-animation-duration: 2s;
 
-/* Options */
+// Options
 $enable-shadows: true;

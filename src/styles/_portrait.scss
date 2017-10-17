@@ -1,0 +1,7 @@
+.portrait {
+	width: $portrait-width;
+
+	@include media-breakpoint-down(sm) {
+		width: $portrait-sm-width;
+	}
+}

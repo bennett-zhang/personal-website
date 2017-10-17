@@ -2,7 +2,7 @@
 
 const $window = $(window)
 const $body = $("body")
-const $identity = $("#identity")
+const $identity = $(".identity")
 const $col = $(".col, [class^=col-]")
 let $cover
 
@@ -46,15 +46,12 @@ $col.on("inview", (evt, visible) => {
 $identity.on("inview", (evt, visible) => {
 	if (visible) {
 		// Typing animation
-		new Typed($identity[0], {
-			strings: [
-				"I'm an innovator.",
-				"I'm a tech entrepreneur.",
-				"I'm a lifelong learner.",
-				"My name is Bennett."
-			],
-			typeSpeed: 45,
-			backSpeed: 45
+		$identity.each(function() {
+			new Typed(this, {
+				stringsElement: "#identity-strings",
+				typeSpeed: 45,
+				backSpeed: 45
+			})
 		})
 
 		$identity.off("inview")

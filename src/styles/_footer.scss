@@ -1,0 +1,20 @@
+footer {
+	width: 100%;
+	background-color: $footer-bg;
+	border-top: solid $divider-width $divider-color;
+
+	.list-inline {
+		margin: 0;
+		line-height: 1;
+
+		.list-inline-item {
+			margin: $footer-gutter-height / 2 0;
+
+			&:not(:last-child) {
+				margin-right: $footer-gutter-width / 2;
+				border-right: solid $divider-width $divider-color;
+				padding-right: $footer-gutter-width / 2 + $divider-width;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.container {
+	padding: $grid-gutter-height / 2;
+}
+
+.col, [class^=col-] {
+	margin: $grid-gutter-height / 2 0;
+}
+
+.divider {
+	padding-bottom: 0.5em;
+	border-bottom: solid $divider-width $divider-color;
+	margin-bottom: 0.5em;
+}

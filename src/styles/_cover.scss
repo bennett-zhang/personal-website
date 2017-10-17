@@ -1,0 +1,23 @@
+@keyframes hue-cycle {
+	0%,
+	100% {
+		filter: hue-rotate(0deg);
+	}
+
+	50% {
+		filter: hue-rotate(180deg);
+	}
+}
+
+#cover {
+	position: fixed;
+	z-index: -10;
+	width: 100%;
+	height: 100%;
+	animation: hue-cycle $cover-animation-duration steps($cover-animation-steps) infinite;
+	transform: translateZ(0);
+}
+
+.banner {
+	height: 100vh;
+}

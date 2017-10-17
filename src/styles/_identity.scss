@@ -1,0 +1,7 @@
+.identity:empty::before {
+	content: "\200b";
+}
+
+.typed-cursor {
+	animation: flash $typed-cursor-animation-duration infinite;
+}
